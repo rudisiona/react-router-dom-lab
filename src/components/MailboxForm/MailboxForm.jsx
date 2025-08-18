@@ -22,25 +22,48 @@ const MailboxForm = ( {addBox}) => {
   
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <h2> Create A New Mailbox</h2>
+      <form onSubmit={handleSubmit}
+      style={{
+          display: 'flex',
+          alignItems: 'center'
+      }}>
         <label>Name: </label>
         <input 
         type="text"
          name='boxOwner'
           value={formData.boxOwner}
           onChange={handleChange}
+          style={{
+            padding: "0.5rem",
+            margin: "0.5rem 0",
+            border: "2px solid black",
+            borderRadius: "3px",
+            width: '250px'
+          }}
+          required
         ></input>
         <label>Box Size: </label>
         <select 
         name="boxSize"
         value={formData.boxSize}
-        onChange={handleChange}       
+        onChange={handleChange}   
+        style={{
+          padding: "0.5rem",
+          margin: "0.5rem 0",
+          border: "2px solid black",
+          borderRadius: "3px",
+          width: '150px'
+        }}    
         >
           <option value="Small">Small</option>
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
         </select>
-        <button type="submit">Create Mailbox</button>
+        <button type="submit"
+        style={{
+          borderRadius: '5px'
+        }}>Create Mailbox</button>
       </form>
     </div>
   )

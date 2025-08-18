@@ -6,22 +6,30 @@ import { Link } from 'react-router'
 
 const MailboxList = ({mailboxes}) => {
   return (
-    <div>
+    <div
+    style={{
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column'
+    }}>
       {mailboxes.length === 0 ? (
-        <p>There are currently no mailboxes.</p>
+        <h2>There are currently no mailboxes.</h2>
       ) : (
+   
         mailboxes.map((mailbox) => (
           <div
             key={mailbox._id}
             style={{
               border: "1px solid black",
-              borderRadius: "8px",
+              width: '250px',
               padding: "1rem",
               margin: "0.5rem 0",
             }}
           >
             <Link to={`/mailboxes/${mailbox._id}`}>
-              <h1>{mailbox.boxOwner}</h1>
+              <h2 style={{
+                  
+              }}>{mailbox.boxOwner}</h2>
             </Link>
             <p>Box Number: {mailbox._id}</p>
           </div>
